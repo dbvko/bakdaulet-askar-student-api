@@ -2,7 +2,7 @@
 
 DevOps midterm project.
 
-Student: Bakdaulet Askar - Main Branch
+Student: Bakdaulet Askar - MAIN VERSION - Main Branch
 
 ## Technologies
 - Java 21
