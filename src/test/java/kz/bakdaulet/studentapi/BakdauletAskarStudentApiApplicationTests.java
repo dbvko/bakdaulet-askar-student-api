@@ -12,6 +12,6 @@ class BakdauletAskarStudentApiApplicationTests {
 
     @Test
     void contextLoads() {
-        assertTrue(false, "Intentional failure for Jenkins CI demonstration");
+        assertTrue(true, "Test fixed by Bakdaulet Askar");
     }
 }
