@@ -2,7 +2,7 @@
 
 DevOps midterm project.
 
-Student: Bakdaulet Askar
+Student: Bakdaulet Askar - FEATURE VERSION
 
 ## Technologies
 - Java 21
