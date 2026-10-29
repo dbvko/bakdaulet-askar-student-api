@@ -1,0 +1,45 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bakdaulet-askar-student-api
+    ports:
+      - "8080:8080"
+    environment:
+      SERVER_PORT: 8080
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/studentdb
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-student}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-studentpass}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - student-network
+    restart: unless-stopped
+
+  db:
+    image: postgres:16-alpine
+    container_name: bakdaulet-askar-postgres
+    environment:
+      POSTGRES_DB: studentdb
+      POSTGRES_USER: ${POSTGRES_USER:-student}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-studentpass}
+    volumes:
+      - student-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    networks:
+      - student-network
+    restart: unless-stopped
+
+networks:
+  student-network:
+    driver: bridge
+
+volumes:
+  student-db-data:
