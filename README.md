@@ -2,7 +2,11 @@
 
 DevOps midterm project.
 
-Student: Bakdaulet Askar - MAIN VERSION - Main Branch
+Student: Bakdaulet Askar
+
+Merge conflict resolution:
+- Main branch version: Bakdaulet Askar - MAIN VERSION
+- Feature branch version: Bakdaulet Askar - FEATURE VERSION
 
 ## Technologies
 - Java 21
