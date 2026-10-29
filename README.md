@@ -57,3 +57,4 @@ Do not commit `.env` or other files containing credentials.
 
 The system report script is located at:
 `scripts/Bakdaulet_Askar_system_report.sh`
+CI: Jenkins polls the GitHub repository every five minutes.
