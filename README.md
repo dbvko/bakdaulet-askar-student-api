@@ -2,7 +2,7 @@
 
 DevOps midterm project.
 
-Student: Bakdaulet Askar
+Student: Bakdaulet Askar - Main Branch
 
 Project components:
 - Linux system monitoring with Bash
